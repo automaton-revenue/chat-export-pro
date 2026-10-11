@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Deploy checklist",
+    "create_time": 1760187780.512,
+    "update_time": 1760188000.0,
+    "conversation_id": "gpt-202",
+    "current_node": "a1",
+    "mapping": {
+      "root": {"id": "root", "parent": null, "children": ["u1"], "message": null},
+      "u1": {"id": "u1", "parent": "root", "children": ["a1"],
+             "message": {"author": {"role": "user"}, "create_time": 1760187780.6,
+                         "content": {"content_type": "text", "parts": ["Give me a short deploy checklist for a Flask app, see https://example.com/docs"]}}},
+      "a1": {"id": "a1", "parent": "u1", "children": [],
+             "message": {"author": {"role": "assistant"}, "create_time": 1760187790.1,
+                         "content": {"content_type": "text", "parts": ["## Checklist\n\n1. Pin dependencies\n2. Set `FLASK_ENV`\n3. Run the tests\n\n```bash\npip install -r requirements.txt\npytest -q\n```"]}}}
+    }
+  },
+  {
+    "title": "<b>Untrusted</b> HTML & {{ARTICLES}} test",
+    "create_time": 1700000000.0,
+    "conversation_id": "gpt-101",
+    "current_node": "a1",
+    "mapping": {
+      "root": {"id": "root", "parent": null, "children": ["u1"], "message": null},
+      "u1": {"id": "u1", "parent": "root", "children": ["a1"],
+             "message": {"author": {"role": "user"},
+                         "content": {"content_type": "text", "parts": ["What does <script>alert('xss')</script> do? Also <img src=x onerror=alert(1)>"]}}},
+      "a1": {"id": "a1", "parent": "u1", "children": [],
+             "message": {"author": {"role": "assistant"},
+                         "content": {"content_type": "text", "parts": ["It would run JavaScript if a page inserted it unescaped: </div></article><script>alert(2)</script>"]}}}
+    }
+  },
+  {
+    "title": "Index",
+    "create_time": 1690000000,
+    "conversation_id": "gpt-050",
+    "mapping": {
+      "u1": {"id": "u1", "parent": null, "children": [],
+             "message": {"author": {"role": "user"}, "content": {"content_type": "text", "parts": ["A chat whose title is Index."]}}}
+    }
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "uuid": "cl-aaa-111",
+    "name": "Trip planning",
+    "created_at": "2026-03-04T08:15:30.123456Z",
+    "updated_at": "2026-03-04T09:00:00Z",
+    "chat_messages": [
+      {"sender": "human", "text": "Plan a weekend in Lisbon", "created_at": "2026-03-04T08:15:30.123456Z"},
+      {"sender": "assistant", "content":[{"type": "text", "text": "Day 1: Alfama and the castle.\nDay 2: Belem."}]}
+    ]
+  },
+  {
+    "uuid": "cl-bbb-222",
+    "name": "Regex help",
+    "created_at": "2025-12-31T23:59:00.5Z",
+    "chat_messages": [
+      {"sender": "human", "text": "Match an email address"},
+      {"sender": "assistant", "text": "Try `^[^@\\s]+@[^@\\s]+$`."}
+    ]
+  }
+]
