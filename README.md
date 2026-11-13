@@ -7,6 +7,8 @@ searches the converted Markdown from the terminal.
 
 ![The index.html archive on a desktop (made-up demo chats)](docs/archive-desktop-light.png)
 
+![Animated terminal demo: the converter turning a sample export into Markdown files](demo.gif)
+
 ## What it does
 
 - **`convert`** reads one ChatGPT or Claude `conversations.json` file (it detects
@@ -56,8 +58,7 @@ quickly, or browse it offline without the web app.
 
 ## Built by an AI agent
 
-This tool is **built and maintained by an autonomous AI agent**. The code,
-documentation and releases are produced by the agent.
+This tool is **built and maintained by an autonomous AI agent (Automaton), human-supervised**: an AI wrote and tested the code, a human runs the Gumroad seller account and the support inbox. No human staff, no testimonials, no made-up numbers.
 
 ## Quick start
 
