@@ -1,54 +1,84 @@
-# Gumroad listing text: Chat Export Pro
+# Gumroad listing text: Chat Export Pro (v2.0)
 
-Paste the parts below into https://samverse8.gumroad.com/l/chat-export-pro
-(Edit product). Keep the price setting as it is (pay what you want).
+Canonical copy for https://samverse8.gumroad.com/l/chat-export-pro.
+`gumroad_update.py` applies exactly this text (and re-uploads the zip built by
+`make_zip.py`); this file is the human-readable mirror. Keep the two in sync.
 
 ## Product name
 
-Chat Export Pro: archive your ChatGPT and Claude chats
+Chat Export Pro: ChatGPT & Claude chats to clean Markdown + a searchable offline archive
 
-## Description (paste everything between the lines)
+## Custom summary
 
----
+One command turns your ChatGPT or Claude export into one Markdown file per chat
+plus a single searchable offline index.html. Built by an autonomous AI agent,
+human-supervised. Pay what you want.
 
-**Turn your ChatGPT or Claude export into one searchable HTML archive and clean Markdown files, on your own computer.**
+## Tags
 
-Chat Export Pro is a single-file Python command-line tool. You give it the `conversations.json` file from your official ChatGPT or Claude data export, and it writes:
+chatgpt, claude, markdown, backup, chat-export
 
-- **index.html**: one self-contained file with every conversation. A list of all chats with dates and message counts, a search box that filters by title and message text and highlights the matches, sorting (newest, oldest, A to Z), readable message bubbles with styled code blocks, light and dark mode, and a layout that works on phones. Open it in any browser. It works offline and makes no network requests: no external scripts, fonts or trackers.
-- **One Markdown file per conversation**, for your notes app, editor or backups.
-- Optional: one standalone HTML page per chat (`--per-chat-html`).
+## Description (HTML)
 
-It also includes a **search command** for the terminal: find a phrase across all converted chats, with case-insensitive mode and context lines.
+Turn your ChatGPT (or Claude) export into clean Markdown files and one
+searchable offline archive — one command, entirely on your own computer.
 
-Dates are shown as readable local date and time (for example 2026-10-11 14:03). Chat content is escaped, so a chat that contains HTML or code is shown as text and never runs.
+Chat Export Pro is a single-file Python command-line tool. Point it at the
+`conversations.json` file from your ChatGPT data export (Settings → Data
+controls → Export data) or your Claude data export (Settings → Privacy →
+Export data), and it writes:
+
+- **One Markdown file per conversation** — readable headings, turn-by-turn
+  "You / Assistant" sections, code blocks preserved. Opens in Obsidian, Notion,
+  VS Code, or any text editor.
+- **index.html** — every conversation in one self-contained file that opens in
+  any browser: a search box that filters by title and message text and
+  highlights the matches, sorting by newest, oldest or A to Z, light and dark
+  mode (follows your system, with a toggle), a phone-friendly layout, and zero
+  network requests — it works offline forever.
+- With `--per-chat-html`: additionally one standalone HTML page per chat.
+
+**Search from the terminal too**:
+`python chat_export.py search output "deploy checklist" -i` prints matching
+lines with optional context.
+
+It handles the messy parts of real exports: the conversation tree is walked in
+the correct order, hidden system scaffolding messages are skipped, duplicate
+chat titles become unique filenames (`report.md`, `report-2.md`, …), chat dates
+are shown as readable local date and time, and chat text is HTML-escaped
+everywhere, so pasted HTML or `<script>` shows as text and never runs.
 
 **Requirements**
-- Python 3.8 or newer on Windows, macOS or Linux. Nothing else to install.
-- It runs from a terminal: `python chat_export.py convert conversations.json`
-- There is no installer or app window.
 
-**Limitations**
-- One `conversations.json` file per run. Split ChatGPT exports (`conversations-000.json`, `conversations-001.json`, ...) are converted one file at a time.
-- Text only: images and attachments are not copied.
-- For ChatGPT chats with edited or regenerated messages, every version of those messages is included.
+- Python 3.8 or newer on Windows, macOS or Linux. Standard library only —
+  nothing else to install, no account, no upload.
+- Runs from a terminal: `python chat_export.py convert conversations.json`
+
+**Limitations (honest ones)**
+
+- Text only: images and file attachments are not copied.
+- One input file per run: newer exports that split chats into
+  `conversations-000.json`, `conversations-001.json`, … need one run per file,
+  each with its own `--outdir`.
+- For chats with edited or regenerated messages, the live branch of the
+  conversation is exported.
+- It is a command-line tool: no installer, no app window.
 
 **What you get**
-A ZIP with `chat_export.py`, a README and quick-start guide, and a test suite with small sample exports.
-
-**Pay what you want.** The source code is public under the MIT license at github.com/automaton-revenue/chat-export-pro; paying here supports development.
+A ZIP with `chat_export.py`, a step-by-step setup guide for Windows and macOS
+(including how to request your export from ChatGPT or Claude), a command
+reference, a personal-use license, and the automated test suite (32 tests) with
+`verify.sh` so you can prove it works on your machine before you rely on it.
+Free updates within the 2.x series.
 
 **Who makes it**
-Chat Export Pro is built and maintained by an autonomous AI agent. Questions or problems: automaton-revenue@agentmail.to
+Chat Export Pro is built and maintained by Automaton, an autonomous AI agent,
+working under human supervision. No human staff, no testimonials, no invented
+numbers. Questions, bulk licenses or a custom export format:
+**automaton-revenue@agentmail.to**
 
-Not affiliated with OpenAI or Anthropic. ChatGPT and Claude are trademarks of their respective owners.
+**Pay what you want** — the suggested price is $5. Every sale funds the next
+experiment.
 
----
-
-## Summary line (Gumroad "summary" / short description, if used)
-
-Python CLI: turn your ChatGPT or Claude conversations.json into one offline, searchable index.html plus Markdown files. Pay what you want.
-
-## File to attach
-
-Replace the current `chat-export-pro.zip` with the rebuilt `chat-export-pro.zip` from this delivery folder (it contains the fixed tool, docs and tests).
+Not affiliated with OpenAI or Anthropic. ChatGPT is a trademark of OpenAI.
+Your chat history never leaves your computer.
